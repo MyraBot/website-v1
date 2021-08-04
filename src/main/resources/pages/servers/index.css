@@ -1,0 +1,119 @@
+.server-selection {
+    min-height: calc(100vh - 75px);
+
+    display: flex;
+    align-items: center; /* Center box vertically */
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+    background-color: var(--primary-colour);
+}
+
+.server-selection .guilds {
+    outline-style: dashed;
+
+    width: 90%;
+
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap; /* Expand to the left if needed */
+}
+
+.server-selection .guild .dashboard {
+    background-color: var(--accent-blue);
+}
+
+.server-selection .guild .invite {
+    background-color: var(--accent-red);
+}
+
+
+/* Landscape format */
+@media screen and (orientation: landscape) {
+
+    .server-selection .guild {
+        width: 700px;
+        height: 150px;
+
+        display: flex;
+        flex-direction: row;
+        align-items: center; /* Center vertically */
+
+        margin: 15px 0 15px 0; /* Add some space at the top and at the bottom */
+
+        background-color: var(--primary-colour);
+        box-shadow: 0 0 5px var(--shadow);
+        border-radius: 10px;
+    }
+
+    .server-selection .guild img {
+        height: 75%; /* Change size */
+        width: auto; /* Keep 1:1 aspect radio */
+
+        margin-left: 5%; /* Add some space to the right side */
+
+        border-radius: 10px;
+    }
+
+    .server-selection .guild p {
+        font-family: var(--ruby-normal);
+        font-size: var(--font-size-large);
+        color: var(--secondary-colour-dark);
+
+        margin-left: 5%;
+        text-align: center; /* Center text (This is only needed if the text goes on multiple lines) */
+    }
+
+    .server-selection .guild .button {
+        margin-left: auto;
+        margin-right: 5%;
+    }
+
+}
+
+/* Portrait format */
+@media screen and (orientation: portrait) {
+
+    .server-selection .guild {
+        width: 200px;
+        height: 300px;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center; /* Center vertically */
+
+        margin: 15px 0 15px 0; /* Add some space at the top and at the bottom */
+
+        background-color: var(--primary-colour);
+        box-shadow: 0 0 5px var(--shadow);
+        border-radius: 10px;
+    }
+
+    .server-selection .guild img {
+        width: 75%; /* Change size */
+        height: auto; /* Keep 1:1 aspect radio */
+
+        border-radius: 10px;
+    }
+
+    .server-selection .guild p {
+        font-family: var(--ruby-normal);
+        font-size: var(--font-size-large);
+        color: var(--secondary-colour-dark);
+
+        order: -1; /* Put the text above the image */
+        text-align: center; /* Center text (This is only needed if the text goes on multiple lines) */
+
+        margin-top: 15px; /* Add some space to the top */
+        margin-bottom: auto; /* Auto adjust the margin of the bottom */
+
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+
+    .server-selection .guild .button {
+        margin-bottom: 15px; /* Add some space to the bottom */
+        margin-top: auto; /* Auto adjust the margin of the top */
+    }
+
+}

@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myra | Embed builder</title>
+
+    <link rel="stylesheet" href="/pages/dashboard/embed/embed.css"> <!-- Main page -->
+    <link rel="stylesheet" href="/pages/dashboard/dashboard.css"> <!-- Dashboard utilities -->
+    <link rel="stylesheet" href="/utilities/utilities.css"> <!-- Utilities -->
+
+    <script src="/pages/dashboard/embed/embed.js"></script> <!-- Dashboard script -->
+    <script src="/pages/dashboard/dashboard.js"></script> <!-- Dashboard script -->
+    <script src="/utilities/colour-themes.js"></script> <!-- Colour themes -->
+</head>
+<body>
+
+<div class="page-content">
+
+    {$info-popup}
+    {$nav_bar}
+
+    <div class="app-content">
+        <!-- Header -->
+        <div class="header">
+            <a href="/./servers"><img class="header-back" src="/icons/arrow.svg"></a> <!-- Back symbol -->
+            <p class="header-text">Dashboard</p>
+            <div class="vertical-hyphen"></div> <!-- Hyphen -->
+            <img class="header-guild-icon" src="{$guild.icon}"> <!-- Guild icon -->
+            <p class="header-guild-name">{$guild.name}</p> <!-- Guild name -->
+        </div>
+
+        <div class="break"></div>
+
+        <!-- Settings -->
+        <div class="settings-wrapper">
+            {$settings.categories}
+
+            <form class="settings" id="form-data">
+                <!-- Embed builder -->
+                <div class="row">
+                    <div class="colour-side-bar"></div>
+
+                    <div class="input-fields">
+                        <p class="title-text">Title</p>
+                        <input name="title" type="text" class="text-input" placeholder="Title" maxlength="250">
+                        <p class="title-text">Description</p>
+                        <textarea name="description" id="description" class="text-input input-large" placeholder="Description" maxlength="2000"></textarea>
+                        <p class="title-text">Thumbnail</p>
+                        <input name="thumbnail" type="text" class="text-input" placeholder="Thumbnail URL">
+                        <p class="title-text">Image</p>
+                        <input name="image" type="text" class="text-input" placeholder="Image URL">
+                        <p class="title-text">Footer</p>
+                        <input name="footer" type="text" class="text-input" placeholder="Footer" maxlength="2000">
+
+                        <div class="choice-selector">
+                            <div class="choice-selection">
+                                <input name="sending-type" type="radio" class="choice-button" id="send" onchange="checkForInputBox();" checked>
+                                <label for="send">Send</label>
+                            </div>
+
+                            <div class="choice-selection">
+                                <input name="sending-type" type="radio" class="choice-button" id="edit" onchange="checkForInputBox();">
+                                <label for="edit">Edit</label>
+                            </div>
+                        </div>
+
+                        <select name="channel" id="channel-id" class="dropdown-selection active">
+                            {$channels}
+                        </select>
+                        <input name="message-id" type="text" class="text-input" id="edit-message-id" placeholder="Message ID, example: 639584576214387797" maxlength="2000">
+
+                        <a class="button submit-button" onclick="sendData()">Save Embed</a>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+{$footer}
+
+</div>
+
+</body>
+
+</html>

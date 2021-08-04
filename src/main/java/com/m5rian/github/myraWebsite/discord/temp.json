@@ -1,0 +1,47 @@
+{
+  "id": "698888395115462738",
+  "last_message_id": "835243245725417553",
+  "last_pin_timestamp": "2020-12-05T14:23:02.704000+00:00",
+  "type": 0,
+  "name": "\u23f3\u2503testing",
+  "position": 4,
+  "parent_id": "675783872339771415",
+  "topic": "This is marian's playground.",
+  "guild_id": "642809436515074053",
+  "permission_overwrites": [
+    {
+      "id": "642809436515074053",
+      "type": "role",
+      "allow": 0,
+      "deny": 1024,
+      "allow_new": "0",
+      "deny_new": "1024"
+    },
+    {
+      "id": "668400106298540052",
+      "type": "role",
+      "allow": 1024,
+      "deny": 0,
+      "allow_new": "1024",
+      "deny_new": "0"
+    },
+    {
+      "id": "709755838692065301",
+      "type": "role",
+      "allow": 0,
+      "deny": 2048,
+      "allow_new": "0",
+      "deny_new": "2048"
+    },
+    {
+      "id": "805730528837369858",
+      "type": "role",
+      "allow": 1024,
+      "deny": 0,
+      "allow_new": "1024",
+      "deny_new": "0"
+    }
+  ],
+  "nsfw": false,
+  "rate_limit_per_user": 0
+}

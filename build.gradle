@@ -1,0 +1,21 @@
+plugins {
+    id 'java'
+    id 'application'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+}
+
+mainClassName = 'com.m5rian.github.myraWebsite.WebApp'
+group = 'com.github.m5ran'
+version = 'development'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation group: 'com.sparkjava', name: 'spark-core', version: '2.9.3' // Spark
+    implementation group: 'org.json', name: 'json', version: '20210307' // JSON
+    implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.1' // OkHttp
+    implementation group: 'org.mongodb', name: 'mongodb-driver-sync', version: '4.2.3' // MongoDb
+    implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3' // Logging
+}

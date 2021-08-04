@@ -1,0 +1,119 @@
+.app-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start; /* Put items at the top */
+    justify-content: space-evenly;
+}
+
+.settings-wrapper {
+    width: 85vw;
+    height: auto;
+
+    margin-bottom: 15px;
+
+    background-color: var(--primary-colour);
+    box-shadow: 0 0 5px var(--shadow); /* Add shadow */
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.settings-wrapper .category-selection {
+    width: auto;
+    height: 25px;
+
+    display: flex;
+
+    background-color: var(--primary-colour-dark);
+}
+
+.settings-wrapper .category-selection .category-item {
+    padding: 5px 10px;
+
+    text-decoration: none;
+    color: var(--secondary-colour);
+}
+
+.settings-wrapper .category-selection .category-item.active {
+    background-color: var(--primary-colour);
+    border-radius: 5px 5px 0 0; /* Round top corners */
+}
+
+.settings-wrapper .settings {
+    width: 100%;
+    height: 100%;
+
+    display: flex; /* Put items next to each other */
+}
+
+.settings-wrapper .settings .row {
+    width: 45%;
+    height: auto;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.settings .row * {
+    margin: 5px;
+}
+
+.errors-wrapper {
+    width: 50%;
+    height: 100%;
+
+    position: relative; /* Make div not collide with other divs */
+    z-index: 1; /* Put error on top of other elements */
+}
+
+.errors-stacker {
+    position: fixed; /* Make divs not moving when scrolling */
+    right: 0; /* Align box to the right */
+}
+
+.notification-popup {
+    width: auto;
+    height: auto;
+
+    position: absolute; /* By default let nothing collide with the div so other errors can slide up */
+    border-radius: 5px; /* Make round corners */
+    margin: 5px; /* Add space between each error */
+
+    transform: translateX(125%); /* Hide error by default, so it get's revealed with the animation */
+    
+    animation-name: anim; /* Apply custom animation */
+    animation-duration: 10s; /* Set duration of animation to 5 seconds */
+    animation-timing-function: var(--fast-in-ease-out); /* Set timing curve */
+}
+
+@keyframes anim {
+    0% {
+        transform: translateX(125%); /* Hide at the start */
+    }
+
+    25% {
+        transform: translateX(0%); /* Show in the middle */
+    }
+    75% {
+        transform: translateX(0%); /* Show in the middle */
+    }
+
+    100% {
+        transform: translateX(125%); /* Hide at the end */
+        display: none; /* Hide error, so there is no chance to see it */
+
+        position: relative; /* Make error collide with other errors, so they stack on top of each other */
+    }
+}
+
+.notification-popup p {
+    padding: 5px; /* Put space around text */
+    font-size: var(--font-size-small); /* Sent font size */
+}
+
+.error-info {
+    background-color: var(--accent-red); /* Set background colour */
+}
+
+.success-info {
+    background-color: var(--accent-blue); /* Set background colour */
+}

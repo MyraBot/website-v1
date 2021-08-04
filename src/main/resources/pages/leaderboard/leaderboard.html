@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Myra - {$guild.name}'s leaderboard</title>
+
+    <!-- Embed -->
+    <meta name="og:title" content="Myra - Leaderboard"> <!-- Title -->
+    <meta name="og:image" content="{$guild.icon}"> <!-- Image url -->
+    <meta name="og:description" content="{$guild.name}'s Leaderboard"> <!-- Description -->
+    <meta name="theme-color" content="{$blue}"> <!-- Colour -->
+
+    <link rel="stylesheet" href="/utilities/utilities.css"> <!-- Utilities --->
+    <link rel="stylesheet" href="/pages/leaderboard/leaderboard.css"> <!-- Page styling -->
+
+    <script src="/utilities/colour-themes.js"></script> <!-- Colour themes -->
+</head>
+<body>
+
+<div class="page-content">
+
+    {$nav_bar}
+
+    <div class="app-content">
+
+        <!-- Server information -->
+        <div class="guild-info">
+            <img class="guild-icon" src="{$guild.icon}">
+            <div class="guild-leaderboard-info">
+                <!-- Text -->
+                <div class="guild-leaderboard-text">
+                    <p class="guild-name">{$guild.name}</p>
+                    <p class="leaderboard-type">Level leaderboard</p>
+                </div>
+                <!-- Leaderboard type buttons -->
+                <div class="guild-leaderboard-buttons">
+                    <a href="./level" class="button level">Level</a>
+                    <a href="./voice" class="button voice-time">voice time</a>
+                    <a href="./balance" class="button balance">balance</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Leaderboard -->
+        <div class="leaderboard">
+            {$members}
+        </div>
+
+    </div>
+
+    {$footer}
+
+</div>
+
+</body>
+</html>

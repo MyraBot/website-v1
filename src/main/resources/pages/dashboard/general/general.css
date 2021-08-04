@@ -1,0 +1,74 @@
+.page-content {
+    width: 100vw;
+    max-width: 100%;
+    min-height: calc(100vh - 75px);
+    height: auto;
+
+    background-color: var(--primary-colour);
+}
+
+.app-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.page-content .app-content .category-selection {
+    width: 10vw;
+    height: auto;
+
+    list-style-type: none; /* Remove list points */
+    border-radius: 5px;
+    background-color: var(--primary-colour);
+    box-shadow: 0 0 5px var(--shadow);
+}
+
+.page-content .app-content .category-selection .category-item {
+    padding: 5px 2px;
+
+    border-radius: 5px;
+    background-color: var(--primary-colour);
+    color: var(--secondary-colour);
+
+    animation: 0.5ms;
+}
+
+.page-content .app-content .category-selection .category-item:hover {
+    border-radius: 5px;
+
+    background-color: var(--primary-colour-dark);
+    color: var(--secondary-colour-dark);
+}
+
+.page-content .app-content .category-selection .category-item a {
+
+}
+
+/* All settings */
+.settings {
+    width: 85vw;
+    height: auto;
+
+    display: flex;
+    justify-content: space-around;
+
+    border-radius: 5px;
+    background-color: var(--primary-colour);
+    box-shadow: 0 0 5px var(--shadow);
+}
+
+.settings .row {
+    width: 45%;
+    height: auto;
+}
+
+.settings .row * {
+    margin: 5px;
+}
+
+.settings .text-input-container .text-input-field {
+    font-size: var(--font-size-small);
+
+    width: 100%;
+    height: 50px;
+}
+

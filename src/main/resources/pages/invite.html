@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myra - Invite</title>
+
+    <!-- Embed -->
+    <meta name="og:title" content="Myra - Invite"> <!-- Title -->
+    <meta name="og:image" content="{$myra.icon}"> <!-- Image url -->
+    <meta name="og:description" content="Invite me to your server!"> <!-- Description -->
+    <meta name="theme-color" content="{$blue}"> <!-- Colour -->
+</head>
+<body onload="
+    const inviteUrl = 'https://discord.com/oauth2/authorize?scope=bot&client_id=718444709445632122&permissions=3090541655';
+    window.location.replace(inviteUrl);
+">
+
+</body>
+</html>

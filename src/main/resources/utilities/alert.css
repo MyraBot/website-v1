@@ -1,0 +1,49 @@
+.alert-window {
+    width: 500px;
+    height: 100px;
+
+    background-color: var(--accent-red-light);
+    border-radius: 10px; /* Round corners */
+    box-shadow: 0 0 5px var(--shadow); /* Add a drop shadow */
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center; /* Center vertically */
+    justify-content: flex-end;
+
+    /* Put object always at the bottom of the viewport */
+    position: fixed;
+    bottom: 150px; /* Add some space between bottom and alert */
+    right: 0; /* Put it outside the viewport */
+    margin: 10px;
+
+    transform: translateX(1000px); /* Hide out of screen view by default */
+}
+
+.alert-window.active {
+    transform: translateX(0); /* Put box again in screen */
+}
+
+.alert-window .info {
+    font-family: var(--ruby-normal);
+    font-size: var(--font-size-normal);
+    color: var(--accent-red);
+
+    margin-left: 10px;
+    margin-right: auto;
+}
+
+.alert-window .no {
+    background-color: var(--accent-red);
+    border-radius: 10px; /* Make border radius match alerts window border radius */
+
+    margin: 5px 10px 5px auto;
+}
+
+.alert-window .yes {
+    background-color: var(--accent-blue);
+    border-radius: 10px; /* Make border radius match alerts window border radius */
+
+    margin: 5px 10px 5px auto;
+}

@@ -1,0 +1,88 @@
+.bot-info {
+    min-height: calc(100vh - 75px); /* Subtract navigation bar size from screen height */
+    width: 100%; /* Use whole width */
+
+    display: flex;
+    flex-wrap: wrap; /* Wrap items when there isn't enough space */
+    flex-direction: row; /* Put items next to each other */
+    justify-content: space-around;
+    align-items: center;
+
+    background-color: var(--accent-blue); /* Background colour */
+}
+
+.bot-info .page-header-content-text {
+    width: 750px;
+    height: auto;
+
+    display: flex;
+    flex-direction: column; /* Put items on top of each other */
+    align-items: center; /* Center horizontally */
+
+    text-align: center; /* Center wrapped text */
+}
+
+
+.bot-info .page-header-content-text .myra-title {
+    color: var(--primary-colour);
+    font-size: calc(var(--font-size-insane) * 5);
+
+    margin-bottom: 10px;
+}
+
+.bot-info .page-header-content-text .myra-description {
+    color: var(--primary-colour);
+    font-size: calc(var(--font-size-insane));
+
+    margin-bottom: 10px;
+}
+
+/* Invite button */
+.bot-info .page-header-content-text .invite {
+    color: var(--accent-blue); /* Font colour */
+    background-color: var(--primary-colour); /* Button colour */
+}
+
+/* Myra image */
+.bot-info .myra-image {
+    width: 400px; /* Set size of image */
+    max-width: 50vw;
+    height: auto; /* Keep 1:1 aspect radio */
+    border-radius: 25px;
+
+    margin: 15px 0; /* Put space to top and bottom */
+}
+
+/* Bot stats */
+.bot-stats {
+    width: 100/;
+    height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+
+    background-color: var(--primary-colour)
+}
+
+.bot-stats .stat {
+    width: 250px;
+    height: 250px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bot-stats .stat img {
+    width: 150px;
+    height: auto;
+
+    filter: var(--secondary-colour-filter);
+}
+
+.bot-stats .stat .count {
+    font-size: var(--font-size-large);
+    color: var(--secondary-colour-dark);
+}

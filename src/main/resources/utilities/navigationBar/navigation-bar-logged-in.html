@@ -1,0 +1,30 @@
+<!-- Navigation bar -->
+<div class="nav-bar">
+    <!-- Page selector -->
+    <div class="tabs">
+        <a href="/" class="tab">Home</a> <!-- Home -->
+        <a href="/servers" class="tab">Dashboard</a> <!-- Dashboard -->
+    </div>
+
+    <!-- Discord user information -->
+    <div class="discord-user" onclick="document.querySelector('#nav-bar-user-settings').classList.toggle('active')">
+        <img class="profile-picture" src="{$account.avatar}">
+        <a class="username">{$account.name}</a>
+        <div class="user-settings" id="nav-bar-user-settings">
+            <div class="user-settings-list">
+                <!--<a class="user-setting-item">Profile</a>-->
+                <a class="user-setting-item" onclick="
+                    console.log('clearing cookies');
+                    // Remove cookies
+                    document.cookie = 'session=; Max-Age=0';
+                    document.cookie = 'code=; Max-Age=0';
+                    document.cookie = 'oAuth2Token=; Max-Age=0';
+                    document.cookie = 'refreshToken=; Max-Age=0';
+                    // Reload side
+                    location.reload();
+                ">Logout</a>
+            </div>
+        </div>
+    </div>
+
+</div>

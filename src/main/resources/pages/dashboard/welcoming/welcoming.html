@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myra | {$guild.name}'s Dashboard</title>
+
+    <link rel="stylesheet" href="/pages/dashboard/welcoming/welcoming.css"> <!-- Main page -->
+    <link rel="stylesheet" href="/pages/dashboard/dashboard.css"> <!-- Dashboard utilities -->
+    <link rel="stylesheet" href="/utilities/utilities.css"> <!-- Utilities -->
+
+    <script src="/pages/dashboard/dashboard.js"></script> <!-- Dashboard script -->
+    <script src="/utilities/colour-themes.js"></script> <!-- Colour themes -->
+
+</head>
+<body>
+
+<div class="page-content">
+
+    {$info-popup}
+    {$nav_bar}
+
+    <div class="app-content">
+        <!-- Header -->
+        <div class="header">
+            <a href="/./servers"><img class="header-back" src="/icons/arrow.svg"></a> <!-- Back symbol -->
+            <p class="header-text">Dashboard</p>
+            <div class="vertical-hyphen"></div> <!-- Hyphen -->
+            <img class="header-guild-icon" src="{$guild.icon}"> <!-- Guild icon -->
+            <p class="header-guild-name">{$guild.name}</p> <!-- Guild name -->
+        </div>
+
+        <div class="break"></div>
+
+        <!-- Settings -->
+        <div class="settings-wrapper">
+            <!-- Category selection -->
+            {$settings.categories}
+
+            <!-- Settings -->
+            <form class="settings" id="form-data"> 
+
+                <div class="row">
+                    <!-- Welcome embed message -->
+                    <div class="input-setting">
+                        <p class="title-text">Welcome embed message</p> <!-- Welcome embed message title -->
+                        <!-- Welcome embed message input -->
+                        <textarea class="text-input" name="welcomeEmbedMessage" maxlength="150" onchange="onChangeMade()">{$current_welcome_embed_message}</textarea>
+                        <!-- Toggle direct messages -->
+                        <div class="toggle-button">
+                            <input type="checkbox" class="checkbox" name="welcomeEmbedToggled" onclick="onChangeMade()" {$welcome_embed_toggled}>
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Welcome direct message -->
+                    <div class="input-setting">
+                        <p class="title-text">Welcome direct message</p> <!-- Welcome embed message title -->
+                        <textarea class="text-input" name="welcomeDirectMessage" maxlength="150" onchange="onChangeMade()">{$current_welcome_direct_message}</textarea>
+                        <!-- Toggle welcome embed messages -->
+                        <div class="toggle-button">
+                            <input type="checkbox" class="checkbox" name="welcomeDirectMessageToggled" onclick="onChangeMade()" {$welcome_direct_message_toggled}>
+                        </div>
+                    </div>
+
+                </div>
+                <!-- Row 2 -->
+                <div class="row">
+
+                    <!-- Welcome channel -->
+                    <div class="input-setting">
+                        <p class="title-text">Welcome channel</p> <!-- Welcome channel title -->
+                        <!-- Selector -->
+                        <select name="welcomeChannelId" class="dropdown-selection active" onchange="onChangeMade()">
+                            {$channels}
+                        </select>
+                    </div>
+
+                    <hr>
+
+                    <!-- Welcome image background url -->
+                    <div class="input-setting">
+                        <!-- Welcome image background url -->
+                        <p class="title-text">Welcome image background</p> <!-- Title -->
+                        <!-- Welcome image background input -->
+                        <textarea class="text-input" name="welcomeImageBackground" maxlength="150" rows="1" onchange="onChangeMade()">{$current_welcome_image_url}</textarea>
+                        <!-- Toggle welcome images -->
+                        <div class="toggle-button">
+                            <input type="checkbox" class="checkbox" name="welcomeImageToggled" onclick="onChangeMade()" {$welcome_image_toggled}>
+                        </div>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <div class="alert-window">
+        <p class="info">You have unsaved changes!</p>
+        <a class="button no" onclick="document.querySelector('.alert-window').classList.remove('active')">Discard</a> <!-- Discard changes -->
+        <a class="button yes" onclick="sendData()">Save</a> <!-- Save changes -->
+    </div>
+
+    {$footer}
+
+</div>
+
+</body>
+
+</html>

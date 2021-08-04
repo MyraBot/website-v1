@@ -1,0 +1,39 @@
+.row {
+    flex-direction: row !important;
+}
+
+.input-fields {
+    width: 100%;
+}
+
+.submit-button {
+    background-color: var(--accent-blue);
+    color: var(--primary-colour);
+
+    margin-top: 25px;
+}
+
+.colour-side-bar {
+    width: 10px;
+    height: 100%;
+
+    margin: 0px !important;
+    background-color: var(--accent-blue);
+}
+
+#edit-message-id {
+    display: none;
+}
+
+#edit-message-id.active {
+    display: block;
+}
+
+#channel-id {
+    display: none;
+}
+
+#channel-id.active {
+    display: block;
+}
+

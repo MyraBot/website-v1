@@ -1,0 +1,25 @@
+<div class="user">
+    <div class="user-info">
+        <p class="user-rank">{$member.rank}</p> <!-- Rank -->
+        <img class="member-avatar" src="{$member.avatar}">
+        <!-- User avatar -->
+        <p class="username">{$member.name}</p>
+    </div>
+    <div class="rank-info">
+        <!-- Messages amount -->
+        <div class="user-leaderboard-property messages">
+            <p class="title">Messages</p> <!-- Title -->
+            <p class="title-value">{$member_messages}</p> <!-- Messages -->
+        </div>
+        <!-- Experience -->
+        <div class="user-leaderboard-property experience">
+            <p class="title">Xp</p> <!-- Title -->
+            <p class="title-value">{$member_xp}</p> <!-- Xp -->
+        </div>
+        <!-- Level -->
+        <div class="user-leaderboard-property level">
+            <p class="title">Level</p> <!-- Title -->
+            <p class="title-value">{$member_level}</p> <!-- Level -->
+        </div>
+    </div>
+</div>

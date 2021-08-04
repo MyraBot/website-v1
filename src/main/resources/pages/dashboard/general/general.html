@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myra | {$guild.name}'s Dashboard</title>
+
+    <link rel="stylesheet" href="/pages/dashboard/welcoming/welcoming.css"> <!-- Main page -->
+    <link rel="stylesheet" href="/pages/dashboard/dashboard.css"> <!-- Dashboard utilities -->
+    <link rel="stylesheet" href="/utilities/utilities.css"> <!-- Utilities -->
+
+    <script src="/pages/dashboard/general/general.js"></script> <!-- Page script -->
+    <script src="/pages/dashboard/dashboard.js"></script> <!-- Dashboard script -->
+    <script src="/utilities/colour-themes.js"></script> <!-- Colour themes -->
+</head>
+<body>
+
+<div class="page-content">
+
+    {$info-popup}
+    {$nav_bar}
+
+    <div class="app-content">
+        <!-- Header -->
+        <div class="header">
+            <a href="/./servers"><img class="header-back" src="/icons/arrow.svg"></a> <!-- Back symbol -->
+            <p class="header-text">Dashboard</p>
+            <div class="vertical-hyphen"></div> <!-- Hyphen -->
+            <img class="header-guild-icon" src="{$guild.icon}"> <!-- Guild icon -->
+            <p class="header-guild-name">{$guild.name}</p> <!-- Guild name -->
+        </div>
+
+        <div class="break"></div>
+
+        <!-- Settings -->
+        <div class="settings-wrapper">
+            <!-- Category selection -->
+            {$settings.categories}
+
+            <!-- Settings -->
+            <form class="settings" id="form-data">
+                <div class="row">
+                    <!-- Prefix change -->
+                    <div class="input-setting">
+                        <p class="title-text">Prefix</p> <!-- Prefix title -->
+                        <input id="prefix-input" name="prefix" type="text" class="text-input" value="{$prefix}" maxlength="5" onchange="onChangeMade()"> <!-- Prefix Input -->
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="alert-window">
+        <p class="info">You have unsaved changes!</p>
+        <a class="button no" onclick="document.querySelector('.alert-window').classList.remove('active')">Discard</a>
+        <!-- Discard changes -->
+        <a class="button yes" onclick="sendData()">Save</a> <!-- Save changes -->
+    </div>
+
+    {$footer}
+
+</div>
+
+</body>
+
+</html>

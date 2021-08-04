@@ -1,0 +1,44 @@
+.page-content {
+    width: 100vw;
+    max-width: 100%;
+    height: auto;
+
+    background-color: var(--primary-colour);
+}
+
+.page-content .app-content {
+    width: 100%;
+    min-height: calc(100vh - 75px - 150px);
+    height: auto; /* Increase height if needed */
+
+    display: flex;
+    justify-content: center; /* Center horizontally */
+}
+
+.page-content .app-content .wrapper {
+    width: 80%;
+    margin: 50px 0;
+}
+
+.page-content .app-content h1 {
+    font-family: var(--ruby-normal);
+    font-size: var(--font-size-insane);
+    color: var(--secondary-colour-dark);
+
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+
+.page-content .app-content .text-paragraph {
+    font-family: var(--ruby-normal);
+    font-size: var(--font-size-small);
+    color: var(--secondary-colour);
+
+    margin: 18px 0;
+    display: block;
+}
+
+.page-content .app-content .text-paragraph a {
+    text-decoration: none;
+    color: var(--accent-blue);
+}

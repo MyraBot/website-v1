@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html id="html" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myra - Dashboard</title>
+
+    <!-- Embed -->
+    <meta name="og:title" content="Myra - Dashboard"> <!-- Title -->
+    <meta name="og:image" content="{$guild.icon}"> <!-- Image url -->
+    <meta name="og:description" content="{$guild.name}'s Dashboard"> <!-- Description -->
+    <meta name="theme-color" content="{$blue}"> <!-- Colour -->
+</head>
+<body onload="
+const fromPage = window.location.href; // Get current url
+document.cookie = 'fromPage=' + fromPage; // Add fromPage cookie
+
+const baseUrl = window.location.origin;
+window.location.replace(baseUrl + '/login'); // Redirect
+">
+
+</body>
+</html>

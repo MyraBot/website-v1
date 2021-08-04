@@ -1,0 +1,249 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+@import "/utilities/navigationBar/navigationBar.css";
+@import "/utilities/footer/footer.css";
+@import "/utilities/input-utils.css";
+@import "/utilities/headers.css";
+@import "/utilities/alert.css";
+
+* {
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+    font-family: var(--ruby-normal); /* Set default font */
+    word-wrap: anywhere; /* Line breaking when needed */
+    /*text-align: center;  Center text even if it's wrapped */
+}
+
+button {
+    border: none;
+}
+
+hr {
+    height: 1px;
+    background-color: var(--primary-colour-dark);
+    border: none;
+}
+
+.break {
+    flex-basis: 100%;
+    height: 0;
+}
+
+.page-content {
+    width: 100%;
+    /*
+    width: 100vw;
+    max-width: 100%;
+    */
+    height: auto;
+
+    background-color: var(--primary-colour);
+}
+
+.app-content {
+    width: 100%;
+    min-height: calc(100vh - 75px - 150px);
+    height: auto; /* Increase height if needed */
+}
+
+.title-text {
+  font-size: var(--font-size-insane);
+  color: var(--secondary-colour);
+}
+
+.detail-text {
+  font-size: var(--font-size-normal);
+  color: var(--secondary-colour);
+}
+
+/* Bottom padding 2 pixels */
+.pb-2 {
+    padding-bottom: 2px;
+}
+
+/* Tooltip top */
+.tooltip-top {
+    position: relative;
+}
+
+.tooltip-top::before,
+.tooltip-top::after {
+    opacity: 0;
+
+    left: 50%;
+    transform: translateX(-50%) translateY(-150%);
+
+    position: absolute;
+
+    transition: 0.1s opacity;
+}
+
+.tooltip-top:hover::before,
+.tooltip-top:hover::after {
+    opacity: 1;
+}
+
+.tooltip-top::before {
+    width: max-content;
+    height: auto;
+
+    padding: 5px;
+
+    content: attr(tooltip);
+    color: var(--primary-colour);
+    font-size: var(--font-size-tiny);
+    text-align: center;
+
+    background-color: var(--secondary-colour);
+    border-radius: 5px;
+}
+
+.tooltip-top::after {
+    top: 15px;
+
+    content: "";
+    border: 10px solid transparent;
+    border-top-color: var(--secondary-colour);
+}
+
+/* Tooltip bottom */
+.tooltip-bottom {
+    position: relative;
+}
+
+.tooltip-bottom::before,
+.tooltip-bottom::after {
+    opacity: 0;
+
+    left: 50%;
+    transform: translateX(-50%) translateY(150%);
+
+    position: absolute;
+
+    transition: 0s opacity;
+}
+
+.tooltip-bottom:hover::before,
+.tooltip-bottom:hover::after {
+    opacity: 1;
+}
+
+.tooltip-bottom::before {
+    width: max-content;
+    height: auto;
+
+    padding: 5px;
+
+    content: attr(tooltip);
+    color: var(--primary-colour);
+    font-size: var(--font-size-tiny);
+    text-align: center;
+
+    background-color: var(--secondary-colour);
+    border-radius: 5px;
+}
+
+.tooltip-bottom::after {
+    top: 10px;
+
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+
+    border-bottom: 10px solid var(--secondary-colour);
+}
+
+/* Let arrow point to the top */
+.arrowUp {
+    transform: rotateZ(270deg);
+}
+
+/* Video transition */
+.page-liquid-bottom {
+    width: 100%;
+    height: 75px; /* Use height of footage */
+
+    position: absolute;
+    transform: translateY(-100%);
+
+    object-fit: cover; /* Make video cut and not stretch */
+}
+
+/* Scroll background */
+body::-webkit-scrollbar {
+    width: 8px;
+    background-color: var(--primary-colour);
+}
+
+/* Scroll pointer */
+body::-webkit-scrollbar-thumb {
+    background-color: var(--primary-colour-dark);
+    border-radius: 8px;
+}
+
+:root {
+    /* Colours */
+    --accent-blue: #7AC8F2;
+    --accent-red-light: #E7BA8E;
+    --accent-red: #C16B65;
+
+    --shadow: #B0C5CB;
+
+    --primary-colour-light: #F0F9FC;
+    --primary-colour: #F1F8FA;
+    --primary-colour-dark: #E9F2F5;
+
+    --secondary-colour: #1B1D23;
+    --secondary-colour-dark: #14151d;
+
+    --secondary-colour-filter: invert(8%) sepia(18%) saturate(609%) hue-rotate(187deg) brightness(97%) contrast(93%); /* Loss: 0.0 */
+    --secondary-colour-dark-filter: invert(35%) sepia(16%) saturate(563%) hue-rotate(163deg) brightness(92%) contrast(88%); /* Loss: 0.0 */
+    --primary-colour-filter: invert(92%) sepia(4%) saturate(1029%) hue-rotate(177deg) brightness(109%) contrast(92%);
+
+    /* Fonts */
+    --ruby-normal: 'Rubik', sans-serif;
+
+    /* Font sizes */
+    --font-size-tiny: 11px;
+    --font-size-small: 15px;
+    --font-size-normal: 18px;
+    --font-size-large: 22px;
+    --font-size-insane: 28px;
+}
+
+[data-theme="dark"] {
+    /* Colours */
+    --accent-blue: #7AC8F2;
+    --accent-red-light: #E7BA8E;
+    --accent-red: #C16B65;
+
+    --shadow: #000000;
+
+    --primary-colour-light: #2d3136;
+    --primary-colour: #22242a;
+    --primary-colour-middle: #18191f; 
+    --primary-colour-dark: #101015;
+
+    --secondary-colour-light: #F0F9FC;
+    --secondary-colour: #E9F5F5;
+    --secondary-colour-dark: #c2d0de;
+
+    --secondary-colour-filter: invert(93%) sepia(12%) saturate(243%) hue-rotate(168deg) brightness(106%) contrast(92%); /* Loss: 0.0 */
+    --secondary-colour-dark-filter: invert(91%) sepia(7%) saturate(610%) hue-rotate(175deg) brightness(94%) contrast(84%); /* Loss: 0.1 */
+    --primary-colour-filter: invert(7%) sepia(3%) saturate(4375%) hue-rotate(188deg) brightness(96%) contrast(90%); /* Loss: 0.1 */
+
+    /* Fonts */
+    --ruby-normal: 'Rubik', sans-serif;
+
+    /* Font sizes */
+    --font-size-tiny: 11px;
+    --font-size-small: 15px;
+    --font-size-normal: 18px;
+    --font-size-large: 22px;
+    --font-size-insane: 28px;
+
+    /**/
+    --fast-in-ease-out: cubic-bezier(0,1,.75,1);
+}

@@ -1,0 +1,130 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+.nav-bar {
+    height: 75px;
+    width: 100vw;
+    max-width: 100%;
+
+    position: relative;
+    display: flex;
+    align-items: center; /* Center items horizontal */
+
+    /*top: 0;  Put navigation bar always at the top */
+
+    background-color: var(--primary-colour);
+    box-shadow: 0 0 5px var(--shadow); /* Add shadow */
+}
+
+.nav-bar .tabs .tab {
+    margin-left: 2.5vw; /* Add spaces between each tab */
+
+    text-decoration: none; /* Remove default line */
+    font-family: var(--ruby-normal);
+    font-size: var(--font-size-normal);
+    color: var(--secondary-colour);
+}
+
+.nav-bar .login {
+    align-self: center; /* Center vertically */
+    margin-left: auto; /* Bind button to right side */
+    margin-right: 25px; /* Add some space to the left side */
+
+    background-color: var(--accent-red);
+}
+
+.nav-bar .discord-user {
+    /* Align information to right side */
+    margin-left: auto;
+    margin-right: 1vw;
+
+    display: flex;
+    justify-content: space-evenly; /* Add some space around the items */
+    align-items: center; /* Align items vertically */
+
+    height: 100%; /* Use whole height */
+    width: 200px; /* Increase width */
+
+    cursor: pointer;
+}
+
+.nav-bar .discord-user .profile-picture {
+    max-width: 50px;
+    max-height: 50px;
+
+    border-radius: 5px;
+}
+
+.nav-bar .discord-user .username {
+    font-family: var(--ruby-normal);
+    font-size: var(--font-size-normal);
+    color: var(--secondary-colour);
+}
+
+/* User settings */
+.nav-bar .discord-user .user-settings {
+    width: 150px;
+    height: auto;
+
+    display: none;
+    position: absolute;
+    top: 75px;
+}
+
+.nav-bar .discord-user .user-settings.active {
+    display: inline;
+}
+
+.nav-bar .discord-user .user-settings::after {
+    left: calc(50% - 5px / 2);
+    bottom: 100%;
+
+    content: "";
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+
+    border-bottom: 5px solid var(--primary-colour);
+    position: absolute;
+}
+
+.nav-bar .discord-user .user-settings .user-settings-list {
+    background-color: var(--primary-colour);
+    border-radius: 10px;
+    box-shadow: 0 0 10px var(--shadow);
+
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-evenly;
+
+    overflow: hidden;
+}
+
+.nav-bar .discord-user .user-settings .user-settings-list .user-setting-item {
+    width: 100%; /* Use whole width */
+    padding: 5px 0; /* Increase height */
+    padding-left: 5px; /* Put some space to the left */
+
+    font-size: var(--ruby-normal);
+    color: var(--secondary-colour);
+}
+
+.nav-bar .discord-user .user-settings .user-settings-list .user-setting-item:hover {
+    background-color: var(--primary-colour-light);
+    cursor: pointer;
+}
+
+/* Screen width is less than 500 pixel */
+@media (max-width: 500px) {
+    /* Use same container size as avatar size */
+    .nav-bar .discord-user {
+        max-width: 50px;
+        max-height: 50px;
+    }
+
+    /* Remove username */
+    .nav-bar .discord-user .username {
+        display: none;
+    }
+}

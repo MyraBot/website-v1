@@ -1,0 +1,127 @@
+@import "utilities.css";
+
+/* Normal button */
+.button {
+    display: inline-block;
+    text-decoration: none;
+
+    padding: 15px 25px 15px 25px; /* Set a default size of 25x10 */
+
+    font-family: var(--ruby-normal);
+    font-size: var(--font-size-normal);
+    color: var(--primary-colour);
+
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Toggle button */
+.toggle-button {
+    width: 75px;
+    height: 40px;
+
+    border-radius: 15px; /* Add round corners */
+
+    /* Center inner checkbox vertically */
+    display: flex;
+    align-items: center;
+
+    background-color: var(--primary-colour-dark);
+}
+
+.toggle-button .checkbox {
+    appearance: none; /* Remove default look */
+
+    width: 30px;
+    height: 30px;
+    border-radius: 100%; /* Make checkbox circle */
+    
+    background-color: var(--accent-red);
+
+    transition: background-color, transform 0.5s;
+}
+
+.toggle-button .checkbox:checked {
+    background-color: var(--accent-blue);
+    transform: translateX(30px);
+}
+
+/* Choice selector */
+.choice-selector {
+    display: flex;
+}
+
+/* Choice selection */
+.choice-selection {
+    display: flex; /* Align buttons with text */
+}
+
+/* Multiple choice button */
+.choice-button {
+    /* Remove default styling */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    width: 20px;
+    height: 20px;
+
+    border: 2px solid var(--secondary-colour);
+    border-radius: 100%;
+}
+
+.choice-button:checked {
+    background-color: var(--accent-blue);
+}
+
+/* Text input */
+.text-input {
+    width: 100%;
+    height: 50px;
+
+    font-size: var(--font-size-small);
+    color: var(--secondary-colour);
+
+    outline: none;
+    box-sizing: border-box;
+    padding: 5px; /* Add some space between the text and the box */
+
+    background-color: var(--primary-colour-light); /* Background colour */
+    border: 1px solid var(--shadow); /* Outline colour */
+    border-radius: 5px; /* Add roundish border */
+
+    resize: vertical; /* Only be able to resize text input in y axis */
+}
+
+.input-large {
+    height: 100px; /* Increase height */
+}
+
+.colour-input {
+    width: 50px;
+    height: 50px;
+
+    outline: none;
+    box-sizing: border-box;
+    padding: 5px; /* Add some space between the text and the box */
+
+    background-color: var(--primary-colour-light); /* Background colour */
+    border: 1px solid var(--primary-colour-dark); /* Outline colour */
+    border-radius: 5px; /* Add roundish border */
+}
+
+.dropdown-selection {
+    width: 100%;
+    height: 50px;
+
+    font-size: var(--font-size-small);
+    color: var(--secondary-colour);
+
+    outline: none;
+    box-sizing: border-box;
+    padding: 5px; /* Add some space between the text and the box */
+
+    background-color: var(--primary-colour-light); /* Background colour */
+    border: 1px solid var(--shadow); /* Outline colour */
+    border-radius: 5px; /* Add roundish border */
+}

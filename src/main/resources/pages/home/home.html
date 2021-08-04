@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Myra | The Discord Bot</title>
+    <meta name="keywords" content="discord, discordapp, bot, Myra, website, dashboard">
+    <!-- JSON Embed -->
+    <meta name="og:title" content="Myra"> <!-- Title -->
+    <meta name="og:image" content="{$myra.icon}"> <!-- Image url -->
+    <meta name="og:description" content="A all in one discord bot for free!"> <!-- Description -->
+    <meta name="theme-color" content="{$blue}"> <!-- Colour -->
+
+    <link rel="stylesheet" href="/pages/home/home.css"> <!-- Page styling -->
+    <link rel="stylesheet" href="/utilities/footer/footer.css"> <!-- Footer -->
+    <link rel="stylesheet" href="/utilities/utilities.css"> <!-- Utilities -->
+
+    <script src="/utilities/colour-themes.js"></script> <!-- Colour themes -->
+    <script src="/pages/home/home.js"></script>
+    <script src="/pages/home/footer.js"></script>
+    <script src="/pages/home/counter.js"></script>
+</head>
+<body>
+
+<div class="page-content">
+    {$nav_bar}
+
+    <div class="app-content">
+
+        <div class="bot-info">
+            <!-- Texts -->
+            <div class="page-header-content-text">
+                <p class="myra-title">Myra</p> <!-- Title -->
+                <p class="myra-description">
+                    The only bot you'll ever need!
+                    <br>Featuring welcoming, leveling, economy, reaction roles, media notifications and much more!
+                </p>
+                <a href="./invite" class="button invite">Invite</a> <!-- Invite button -->
+            </div>
+            <!-- Image -->
+            <img class="myra-image" src="../../images/logo.png">
+        </div>
+
+        <video class="page-liquid-bottom" src="/videos/liquid/liquid.webm" autoplay muted loop></video>
+
+        <!-- Stats page -->
+        <div class="bot-stats">
+            <div class="stat users">
+                <img src="/icons/users.svg">
+                <p class="count">0</p>
+            </div>
+            <div class="stat guilds">
+                <img src="/icons/server.svg">
+                <p class="count">0</p>
+            </div>
+        </div>
+
+    </div>
+
+    {$footer}
+</div>
+
+</body>
+
+</html>
