@@ -10,7 +10,7 @@ public class MongoMember {
     private final String avatar;
     private final int level;
     private final long xp;
-    private final int messages;
+    private final long messages;
     private final long voiceCallTime;
     private final int balance;
     private final long lastClaim;
@@ -25,7 +25,7 @@ public class MongoMember {
         final Document guildDocument = userDocument.get(guildId, Document.class);
         this.level = guildDocument.getInteger("level");
         this.xp = Utils.getBsonLong(guildDocument, "xp");
-        this.messages = guildDocument.getInteger("messages");
+        this.messages = Utils.getBsonLong(guildDocument, "messages");
         this.voiceCallTime = Utils.getBsonLong(guildDocument, "voiceCallTime");
         this.balance = guildDocument.getInteger("balance");
         this.lastClaim = guildDocument.getLong("lastClaim");
@@ -56,7 +56,7 @@ public class MongoMember {
         return xp;
     }
 
-    public int getMessages() {
+    public long getMessages() {
         return messages;
     }
 
