@@ -2,7 +2,7 @@
  * Toggle the class list "active" on the changes-option element
  * which will set the opacity of the element to 1.
  */
- function onChangeMade() {
+function onChangeMade() {
   document.querySelector(".alert-window").classList.add("active");
 }
 
@@ -68,8 +68,8 @@ function sendData() {
   });
 
   // Execute post request
-  const tab = window.location.href.split("/")[ window.location.href.split("/").length - 1 ]; // Get current tab
-  const url = "http://localhost:1027/api/" + tab;
+  const tab = window.location.href.split("/")[window.location.href.split("/").length - 1]; // Get current tab
+  const url = window.location.protocol + "//" + window.location.host + ":1027" + "/api/" + tab;
 
   fetch(url, {
     method: 'POST',
@@ -78,30 +78,30 @@ function sendData() {
   })
     .then((response) => response.json())
     .then((data) => {
-            if (document.querySelector(".alert-window") != null) {
-              document.querySelector(".alert-window").classList.remove("active");
-            }
+      if (document.querySelector(".alert-window") != null) {
+        document.querySelector(".alert-window").classList.remove("active");
+      }
 
-            let i = 0;
-            if (data.status == "200") createMessage(data.messages[i])
-            else if (data.status == "422") createError(data.messages[i])  
-            i++;
-            // Create loop function     
-            function loop() {
-              setTimeout(function() {
-                if (data.status == "200") createMessage(data.messages[i])
-                else if (data.status == "422") createError(data.messages[i])  
-                
-                i++; // Increase counter
-                if (i < data.messages.length) { // Run delayed loop as long as there are still errors int the array
-                  loop(); // Run function for next item
-                }
-              }, 500) // Set delay of 0,5 seconds
-            }
-            
-            if (data.messages.length > 1) loop(); // Start loop
+      let i = 0;
+      if (data.status == "200") createMessage(data.messages[i])
+      else if (data.status == "422") createError(data.messages[i])
+      i++;
+      // Create loop function     
+      function loop() {
+        setTimeout(function () {
+          if (data.status == "200") createMessage(data.messages[i])
+          else if (data.status == "422") createError(data.messages[i])
+
+          i++; // Increase counter
+          if (i < data.messages.length) { // Run delayed loop as long as there are still errors int the array
+            loop(); // Run function for next item
+          }
+        }, 500) // Set delay of 0,5 seconds
+      }
+
+      if (data.messages.length > 1) loop(); // Start loop
     });
-  }
+}
 
 function createMessage(message) {
   // Create message
@@ -125,11 +125,11 @@ function createError(message) {
   document.querySelector(".errors-stacker").appendChild(div);
 }
 
-  /**
- * 
- * @param   {String} name Key of cookie. 
- * @returns {String}      The found value of a cookie by the given key.
- */
+/**
+* 
+* @param   {String} name Key of cookie. 
+* @returns {String}      The found value of a cookie by the given key.
+*/
 function getCookie(name) {
   const match = document.cookie.match(new RegExp('(^| )' + name + '=([^;]+)'));
   if (match) return match[2];
