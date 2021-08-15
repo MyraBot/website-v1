@@ -30,7 +30,7 @@ public class Db {
 
     final MongoClient mongoClient = MongoClients.create(settings);
     final MongoDatabase database = mongoClient.getDatabase("Myra"); // Get database
-    
+
     public MongoCollection<Document> getCollection(String collection) {
         return database.getCollection(collection);
     }
@@ -38,7 +38,7 @@ public class Db {
     public class Cache {
         public static Document getGuild(String guildId) {
             final okhttp3.Request request = new okhttp3.Request.Builder()
-                    .url(Utils.CURRENT_ADDRESS + ":" + Utils.BOT_PORT + "/api/retrieve/guild")
+                    .url(Utils.BOT_ADDRESS + ":" + Utils.BOT_PORT + "/api/retrieve/guild")
                     .addHeader("guildId", guildId)
                     .get()
                     .build();
@@ -47,8 +47,8 @@ public class Db {
                 return Document.parse(response.body().string()); // Parse json response to org.bson.Document and return it
             } catch (IOException e) {
                 e.printStackTrace();
+                return null;
             }
-            return null;
         }
     }
 }

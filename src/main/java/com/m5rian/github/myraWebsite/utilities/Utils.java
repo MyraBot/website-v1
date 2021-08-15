@@ -5,7 +5,9 @@ import org.bson.Document;
 import org.json.JSONObject;
 import spark.Response;
 
+import java.io.IOException;
 import java.math.BigInteger;
+import java.net.Socket;
 import java.net.URLDecoder;
 import java.nio.charset.StandardCharsets;
 import java.text.NumberFormat;
@@ -15,6 +17,7 @@ public class Utils {
     public static final String LOCAL_ADDRESS = "http://myra.dyndns1.de";
     public static final String SERVER_ADDRESS = "http://www.myra.bot";
     public static String CURRENT_ADDRESS;
+    public static String BOT_ADDRESS;
     public static final Integer WEBSITE_PORT = 80;
     public static final Integer BOT_PORT = 1027;
 
@@ -44,6 +47,19 @@ public class Utils {
         } else {
             CURRENT_ADDRESS = SERVER_ADDRESS;
         }
+
+        final okhttp3.Request request = new okhttp3.Request.Builder()
+                .url(SERVER_ADDRESS + ":" + Utils.BOT_PORT + "/api/retrieve/guild")
+                .addHeader("guildId", "642809436515074053")
+                .get()
+                .build();
+        try (okhttp3.Response response = Utils.HTTP_CLIENT.newCall(request).execute()) {
+            BOT_ADDRESS = SERVER_ADDRESS;
+        } catch (IOException e) {
+            BOT_ADDRESS = LOCAL_ADDRESS;
+        }
+
+        System.out.println("Bot address " + BOT_ADDRESS);
     }
 
     /**
