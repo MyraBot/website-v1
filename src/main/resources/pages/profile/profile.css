@@ -1,21 +1,16 @@
 .app-content {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
 }
 
 .user-info {
-    width: 250px;
-    height: 500px;
+    width: 300px;
+    height: auto;
 
-    display: flex;
     flex-direction: column;
     align-items: center; /* Center horizontally */
-
-    background-color: var(--primary-colour);
-    box-shadow: 0 0 5px var(--shadow);
-    border-radius: 10px;
 }
 
 /* User avatar */
@@ -39,22 +34,72 @@
     margin-top: 5px;
 }
 
+/* User badges */
 .user-info .user-badges {
-    width: 50%;
+    width: 75%;
     height: 20px;
 
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Center badges horizontally */
+    flex-wrap: wrap; /* Allow wrapping */
 }
 
 .user-info .user-badges .badge {
+    /* Set size of each badge */
     width: 20px;
     height: 20px;
 
-    margin: 5px;
+    margin: 5px; /* Put space around the badges */
 }
 
 .user-info .user-badges .badge img {
     width: 100%;
     height: 100%;
+}
+
+/* Social media */
+.user-info .socials {
+    width: 100%;
+    height: 50px;
+
+    display: flex;
+    justify-content: center;
+
+    margin-top: 25px;
+}
+
+.user-info .socials .social-media {
+    width: 50px;
+    height: 50px;
+
+    border-radius: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.user-info .socials .social-media svg {
+    width: 75%;
+}
+
+/* User information table */
+.user-info .📋 {
+    margin-top: 25px;
+    margin-bottom: 15px;
+
+    max-width: 100%;
+}
+
+/* Pair */
+.user-info .📋 tbody tr {
+    font-size: var(--font-size-small);
+    text-align: left;
+}
+
+/* Key */
+.user-info .📋 tbody tr th {
+    font-weight: normal; /* Make font weight normal */
+    padding-right: 10px;
+    width: 7.5em; /* Set width so this cell doesn't resize */
 }

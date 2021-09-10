@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html id="html" lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,27 +17,57 @@
 
     <script src="/utilities/colour-themes.js"></script> <!-- Colour theme -->
 </head>
+
 <body>
+    <div class="page-content">
 
-<div class="page-content">
+        {$nav_bar}
 
-    {$nav_bar}
+        <div class="app-content">
 
-    <div class="app-content">
+            <!-- User information -->
+            <div class="user-info 🥡">
+                <img class="user-avatar" src="{$user.avatar}"> <!-- Avatar -->
+                <p class="user-name">{$user.name}#{$user.discriminator}</p> <!-- User as tag -->
+                <div class="user-badges">{$user.badges}</div> <!-- User badges -->
+                <div class="socials">{$user.socials}</div> <!--  Social media -->
+                <table class="table 📋">
+                    <tbody>
+                        <tr>
+                            <th>Username</th>
+                            <td>{$user.name}</td>
+                        </tr>
+                        <tr>
+                            <th>Discriminator</th>
+                            <td>{$user.discriminator}</td>
+                        </tr>
+                        <tr>
+                            <th>ID</th>
+                            <td>{$user.id}</td>
+                        </tr>
+                    </tbody>
+                </table>
 
-        <!-- User information -->
-        <div class="user-info">
-            <img class="user-avatar" src="{$user.avatar}"> <!-- Avatar -->
-            <p class="user-name">{$user.name}#{$user.discriminator}</p> <!-- User as tag -->
-            <div class="user-badges">{$user.badges}</div> <!-- User badges -->
+
+            </div>
+
+            <!--
+            <div class="stats 🥡">
+                <div class="stat">
+                    <p class="title-text">Servers</p>
+                    <p class="detail-text">{$user.servers.size}</p>
+                </div>
+                <div class="stat">
+                    <p class="title-text">Messages</p>
+                    <p class="detail-text">{$user.messages}</p>
+                </div>
+            </div>-->
+
         </div>
 
+        {$footer}
+
     </div>
-
-    {$footer}
-
-</div>
-
 </body>
 
 </html>

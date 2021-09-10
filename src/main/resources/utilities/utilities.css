@@ -61,6 +61,12 @@ hr {
     padding-bottom: 2px;
 }
 
+/* Tables */
+.table {
+    border-spacing: 0; /* Remove default space between each row */
+    color: var(--secondary-colour); /* Set content to be the secondary colour */
+}
+
 /* Tooltip top */
 .tooltip-top {
     position: relative;
@@ -158,6 +164,16 @@ hr {
 /* Let arrow point to the top */
 .arrowUp {
     transform: rotateZ(270deg);
+}
+
+.🥡 {
+    background-color: var(--primary-colour);
+    box-shadow: 0 0 5px var(--shadow);
+    border-radius: 10px;
+
+    display: flex;
+
+    margin: 5px;
 }
 
 /* Video transition */

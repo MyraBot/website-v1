@@ -122,7 +122,9 @@ public class DiscordUser {
     public enum UserBadge {
         // Myra badges
         MYRA_STAFF("Myra Staff"),
+        MYRA_TRANSLATOR("Myra Translator"),
         MYRA_PARTNER("Myra Partner"),
+
         // HypeSquad
         HYPESQUAD("HypeSquad Events"),
         HYPESQUAD_BRAVERY("HypeSquad Bravery"),

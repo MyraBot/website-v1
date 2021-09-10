@@ -10,9 +10,13 @@ version = 'development'
 
 repositories {
     mavenCentral()
+    maven {
+        url 'https://m5rian.jfrog.io/artifactory/java'
+    }
 }
 
 dependencies {
+    implementation group: 'com.github.myra', name: 'commons', version: 'development' // Myra commons
     implementation group: 'com.sparkjava', name: 'spark-core', version: '2.9.3' // Spark
     implementation group: 'org.json', name: 'json', version: '20210307' // JSON
     implementation group: 'com.squareup.okhttp3', name: 'okhttp', version: '4.9.1' // OkHttp
