@@ -50,6 +50,11 @@ hr {
     height: auto; /* Increase height if needed */
 }
 
+.📄-3 {
+    font-size: calc(var(--font-size-insane) * 4);
+    color: var(--secondary-colour);
+}
+
 .📄-2 {
   font-size: var(--font-size-insane);
   color: var(--secondary-colour);
@@ -65,6 +70,10 @@ hr {
     font-size: var(--font-size-small);
     color: var(--secondary-colour);
     text-align: center; 
+}
+
+.🌌-5 {
+    margin: 5px;
 }
 
 /* Bottom padding 2 pixels */
@@ -185,6 +194,22 @@ hr {
     display: flex;
 
     margin: 5px;
+}
+
+/* Curves */
+.🌊-top {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    overflow: hidden;
+    line-height: 0;
+}
+.🌊-top svg {
+    position: relative;
+    display: block;
+    width: calc(150% + 1.3px);
+    height: 50px;
 }
 
 /* Video transition */

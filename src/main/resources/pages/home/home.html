@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,50 +17,76 @@
     <link rel="stylesheet" href="/utilities/utilities.css"> <!-- Utilities -->
 
     <script src="/utilities/colour-themes.js"></script> <!-- Colour themes -->
-    <script src="/pages/home/home.js"></script>
-    <script src="/pages/home/footer.js"></script>
-    <script src="/pages/home/counter.js"></script>
 </head>
+
 <body>
+    <div class="page-content">
 
-<div class="page-content">
-    {$nav_bar}
+        {$nav_bar}
 
-    <div class="app-content">
+        <div class="app-content">
 
-        <div class="bot-info">
-            <!-- Texts -->
-            <div class="page-header-content-text">
-                <p class="myra-title">Myra</p> <!-- Title -->
-                <p class="myra-description">
-                    The only bot you'll ever need!
-                    <br>Featuring welcoming, leveling, economy, reaction roles, media notifications and much more!
-                </p>
-                <a href="./invite" class="button invite">Invite</a> <!-- Invite button -->
+            <div class="bot-info">
+                <!-- Texts -->
+                <div class="page-header-content-text">
+                    <p class="📄-3 text">Myra</p> <!-- Title -->
+                    <p class="📄-2 text">
+                        The only bot you'll ever need!<br>Featuring welcoming, leveling, economy, reaction roles, media notifications and much more!
+                    </p>
+                    <a href="./invite" class="button invite">Invite</a> <!-- Invite button -->
+                </div>
+                <!-- Image -->
+                <img class="myra-image" src="../../images/logo.png">
             </div>
-            <!-- Image -->
-            <img class="myra-image" src="../../images/logo.png">
+
+            <div class="features">
+                <!-- Leveling -->
+                <div class="feature light">
+                    {$wave.top[colour=var(--accent-blue)]}
+
+                    <img src="/images/home/01.svg" class="🌌-5">
+                    <div class="🌌-5">
+                        <p class="📄-2">Leveling</p>
+                        <p class="📄-1">Let Users earn xp and level up by writing message or talking in voice channels!</p>
+                    </div>
+                </div>
+                <!-- Media notifications -->
+                <div class="feature dark">
+                    {$wave.top[colour=var(--primary-colour)]}
+
+                    <div class="🌌-5">
+                        <p class="📄-2">Media notifications</p>
+                        <p class="📄-1">Get notifications from your favorite content creators direclty in Discord!</p>
+                    </div>
+                    <img src="/images/home/01.svg" class="🌌-5">
+                </div>
+                <!-- Economy -->
+                <div class="feature light">
+                    {$wave.top[colour=var(--primary-colour-dark)]}
+
+                    <img src="/images/home/01.svg" class="🌌-5">
+                    <div class="🌌-5">
+                        <p class="📄-2">Economy</p>
+                        <p class="📄-1">Make money and gamble with it, though don't play too much...</p>
+                    </div>
+                </div>
+                <!-- Music -->
+                <div class="feature dark">
+                    {$wave.top[colour=var(--primary-colour)]}
+
+                    <div class="🌌-5">
+                        <p class="📄-2">Music</p>
+                        <p class="📄-1">Play high quality music with fun filters to play around with!</p>
+                    </div>
+                    <img src="/images/home/01.svg" class="🌌-5">
+                </div>
+            </div>
+
         </div>
 
-        <video class="page-liquid-bottom" src="/videos/liquid/liquid.webm" autoplay muted loop></video>
-
-        <!-- Stats page -->
-        <div class="bot-stats">
-            <div class="stat users">
-                <img src="/icons/users.svg">
-                <p class="count">0</p>
-            </div>
-            <div class="stat guilds">
-                <img src="/icons/server.svg">
-                <p class="count">0</p>
-            </div>
-        </div>
+        {$footer}
 
     </div>
-
-    {$footer}
-</div>
-
 </body>
 
 </html>

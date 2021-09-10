@@ -12,6 +12,8 @@ import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
+import java.util.Iterator;
 import java.util.List;
 
 public class Reader {
@@ -57,9 +59,26 @@ public class Reader {
     }
 
     public String read(String fileName) throws LoginRedirection {
-        final String html = readFile("/pages/" + fileName + ".html")
+        String html = readFile("/pages/" + fileName + ".html")
                 .replace("{$info-popup}", readFile("/utilities/info-popup.html")) // Information container
                 .replace("{$footer}", readFile("/utilities/footer/footer.html"));
+
+        final Iterator<String> iterator = Arrays.stream(html.split("\\s+")).iterator();
+        while (iterator.hasNext()) {
+            final String word = iterator.next();
+            if (word.matches("\\{\\$wave\\.([a-z]|-)*\\[([a-z]|-)*=.*]}")) {
+                final String position = word.split("\\.")[1].split("\\[")[0];
+                final String colour = word.split("=")[1].substring(0, word.split("=")[1].length() - 2);
+
+                String wave;
+                switch (position) {
+                    case "top" -> wave = readFile("/utilities/waves/top");
+                    default -> wave = "";
+                }
+                wave = wave.replace("{$colour}", colour);
+                html = html.replace(word, wave);
+            }
+        }
 
         // Page is a dashboard page, which requires the user to be logged in
         if (this.isOnDashboard) {
