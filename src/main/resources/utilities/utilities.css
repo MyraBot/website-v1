@@ -50,12 +50,12 @@ hr {
     height: auto; /* Increase height if needed */
 }
 
-.title-text {
+.📄-2 {
   font-size: var(--font-size-insane);
   color: var(--secondary-colour);
 }
 
-.detail-text {
+.📄-1 {
   font-size: var(--font-size-normal);
   color: var(--secondary-colour);
   text-align: center;
