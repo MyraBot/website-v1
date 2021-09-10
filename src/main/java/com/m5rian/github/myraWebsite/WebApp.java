@@ -1,10 +1,7 @@
 package com.m5rian.github.myraWebsite;
 
 import com.m5rian.github.myraWebsite.Pages.*;
-import com.m5rian.github.myraWebsite.Pages.dashboard.Embed;
-import com.m5rian.github.myraWebsite.Pages.dashboard.General;
-import com.m5rian.github.myraWebsite.Pages.dashboard.Leveling;
-import com.m5rian.github.myraWebsite.Pages.dashboard.Welcoming;
+import com.m5rian.github.myraWebsite.Pages.dashboard.*;
 import com.m5rian.github.myraWebsite.utilities.Utils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -43,6 +40,7 @@ public class WebApp {
         get("/profile/:userId", Profile::onGet); // User profile
         // Dashboard
         get("/servers", Servers::onGet); // Server selection
+        get("dashboard/:guildId/modules", Modules::onGet); // Module selection
         get("/dashboard/:guildId/general", General::onGet); // Dashboard
         get("/dashboard/:guildId/leveling", Leveling::onGet); // Leveling settings
         get("/dashboard/:guildId/welcoming", Welcoming::onGet); // Leveling settings
@@ -55,7 +53,7 @@ public class WebApp {
         get("/support", Support::onGet); // Discord support server
 
         // Redirects
-        redirect("/dashboard/:guildId", req -> "dashboard/$guildId/general");
+        redirect("/dashboard/:guildId", req -> "dashboard/$guildId/modules");
         redirect("/leaderboard/:guildId", req -> "leaderboard/$guildId/level");
         redirect("/leaderboard/:guildId/", req -> "leaderboard/$guildId/level");
     }

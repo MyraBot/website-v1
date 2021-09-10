@@ -14,8 +14,12 @@
     /*text-align: center;  Center text even if it's wrapped */
 }
 
+/* Remove default styling */
 button {
     border: none;
+}
+a {
+    text-decoration: none;
 }
 
 hr {
@@ -54,6 +58,13 @@ hr {
 .detail-text {
   font-size: var(--font-size-normal);
   color: var(--secondary-colour);
+  text-align: center;
+}
+
+.📄-0 {
+    font-size: var(--font-size-small);
+    color: var(--secondary-colour);
+    text-align: center; 
 }
 
 /* Bottom padding 2 pixels */
@@ -205,18 +216,25 @@ body::-webkit-scrollbar-thumb {
     --accent-red-light: #E7BA8E;
     --accent-red: #C16B65;
 
+    --accent-blue-filter: invert(73%) sepia(26%) saturate(643%) hue-rotate(160deg) brightness(96%) contrast(97%);
+
     --shadow: #B0C5CB;
 
     --primary-colour-light: #F0F9FC;
     --primary-colour: #F1F8FA;
     --primary-colour-dark: #E9F2F5;
 
+    --secondary-colour-light: #2d3136;
     --secondary-colour: #1B1D23;
     --secondary-colour-dark: #14151d;
 
-    --secondary-colour-filter: invert(8%) sepia(18%) saturate(609%) hue-rotate(187deg) brightness(97%) contrast(93%); /* Loss: 0.0 */
-    --secondary-colour-dark-filter: invert(35%) sepia(16%) saturate(563%) hue-rotate(163deg) brightness(92%) contrast(88%); /* Loss: 0.0 */
-    --primary-colour-filter: invert(92%) sepia(4%) saturate(1029%) hue-rotate(177deg) brightness(109%) contrast(92%);
+    --primary-colour-light-filter: invert(87%) sepia(20%) saturate(80%) hue-rotate(165deg) brightness(109%) contrast(98%);
+    --primary-colour-filter: invert(96%) sepia(20%) saturate(191%) hue-rotate(167deg) brightness(100%) contrast(97%);
+    --primary-colour-dark-filter: invert(100%) sepia(98%) saturate(498%) hue-rotate(174deg) brightness(102%) contrast(92%);;
+
+    --secondary-colour-light-filter: invert(15%) sepia(6%) saturate(1169%) hue-rotate(173deg) brightness(93%) contrast(86%);
+    --secondary-colour-filter: invert(9%) sepia(28%) saturate(333%) hue-rotate(187deg) brightness(97%) contrast(95%);;
+    --secondary-colour-dark-filter: invert(4%) sepia(4%) saturate(7499%) hue-rotate(196deg) brightness(93%) contrast(89%);
 
     /* Fonts */
     --ruby-normal: 'Rubik', sans-serif;
@@ -227,14 +245,12 @@ body::-webkit-scrollbar-thumb {
     --font-size-normal: 18px;
     --font-size-large: 22px;
     --font-size-insane: 28px;
+
+    --fast-in-ease-out: cubic-bezier(0,1,.75,1);
 }
 
 [data-theme="dark"] {
     /* Colours */
-    --accent-blue: #7AC8F2;
-    --accent-red-light: #E7BA8E;
-    --accent-red: #C16B65;
-
     --shadow: #000000;
 
     --primary-colour-light: #2d3136;
@@ -249,17 +265,4 @@ body::-webkit-scrollbar-thumb {
     --secondary-colour-filter: invert(93%) sepia(12%) saturate(243%) hue-rotate(168deg) brightness(106%) contrast(92%); /* Loss: 0.0 */
     --secondary-colour-dark-filter: invert(91%) sepia(7%) saturate(610%) hue-rotate(175deg) brightness(94%) contrast(84%); /* Loss: 0.1 */
     --primary-colour-filter: invert(7%) sepia(3%) saturate(4375%) hue-rotate(188deg) brightness(96%) contrast(90%); /* Loss: 0.1 */
-
-    /* Fonts */
-    --ruby-normal: 'Rubik', sans-serif;
-
-    /* Font sizes */
-    --font-size-tiny: 11px;
-    --font-size-small: 15px;
-    --font-size-normal: 18px;
-    --font-size-large: 22px;
-    --font-size-insane: 28px;
-
-    /**/
-    --fast-in-ease-out: cubic-bezier(0,1,.75,1);
 }
