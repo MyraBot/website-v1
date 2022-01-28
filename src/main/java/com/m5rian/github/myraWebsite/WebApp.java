@@ -24,13 +24,6 @@ public class WebApp {
         staticFileLocation("/"); // Set the location for files
         Utils.setup();
 
-        before(((req, res) -> {
-            // User tries to access translating page
-            if (req.url().startsWith("http://translate.myra.bot/")) {
-                final String redirectUrl = req.url().replace("http://translate.myra.bot", "http://translate.myra.bot:1515");
-                res.redirect(redirectUrl);
-            }
-        }));
         // Main pages
         get("/", Home::onGet); // Home page
         get("/leaderboard/:guildId/level", Leaderboard::getGuildLevelLeaderboard); // Guild level leaderboard
