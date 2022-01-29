@@ -18,7 +18,7 @@ public class Utils {
     public static final String SERVER_ADDRESS = "http://www.myra.bot";
     public static String CURRENT_ADDRESS;
     public static String BOT_ADDRESS;
-    public static final Integer WEBSITE_PORT = 80;
+    public static final Integer WEBSITE_PORT = 82;
     public static final Integer BOT_PORT = 1027;
 
     public static final OkHttpClient HTTP_CLIENT = new OkHttpClient();
